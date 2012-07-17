@@ -5,7 +5,6 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/sleep.h>
-#include <math.h>
 
 
 /*
@@ -29,37 +28,6 @@ volatile uint8_t dr, dg, db;
 
 #define THRESHOLD 10
 
-void getRGB(uint8_t hue){
-	float h,x;
-	h = hue/42.5;
-	x = 255*(1-fabs(h%2 - 1));
-	if(h>=0 && h<1){
-		r = 255;
-		g = x;
-		b = 0;
-	} else if(h>=1 && h<2){
-		r = x;
-		g = 255;
-		b = 0;
-	} else if(h>=2 && h<3){
-		r = 0;
-		g = 255;
-		b = x;
-	} else if(h>=3 && h<4){
-		r = 0;
-		g = x;
-		b = 255;
-	} else if(h>=4 && h<5){
-		r = x;
-		g = 0;
-		b = 255;
-	} else if(h>=5 && h<6){
-		r = 255;
-		g = 0;
-		b = x;
-	}
-	
-}
 
 ISR (TIM1_OVF_vect)           /* Note [2] */
 {
