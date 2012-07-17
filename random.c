@@ -20,76 +20,94 @@ void init(void);
 
 
 enum { UP, DOWN };
-volatile uint8_t r = 0;
-volatile uint8_t g = 80;
-volatile uint8_t b = 160;
+volatile uint8_t r = 255;
+volatile uint8_t g = 0;
+volatile uint8_t b = 0;
 volatile uint8_t dr, dg, db;
 
+volatile uint8_t phase = 0;
+volatile uint8_t cnt=0;
 
-#define THRESHOLD 10
+#define THRESHOLD 15
 
-
-ISR (TIM1_OVF_vect)           /* Note [2] */
+ISR (TIM1_OVF_vect)        
 {
-    //static uint8_t pwm;        /* Note [3] */
-    //static uint8_t direction;
-	static uint8_t cnt=0;
-	if(++cnt==THRESHOLD){
-    switch (dg)          /* Note [4] */
-    {
-        case UP:
-            if (++g == 255)
-                dg = DOWN;
-            break;
-
-        case DOWN:
-            if (--g == 0)
-                dg = UP;
-            break;
-    }
-    switch (db)          /* Note [4] */
-    {
-        case UP:
-            if (++b == 255)
-                db = DOWN;
-            break;
-
-        case DOWN:
-            if (--b == 0)
-                db = UP;
-            break;
-    }
 	
-		OCR1A = g;                  /* Note [5] */
+	if(++cnt==THRESHOLD){
+		switch (phase){
+			case 0:
+				if(++g == 255){
+					phase++;
+				}
+				break;
+			case 1:
+				if(--r == 0){
+					phase++;
+				}
+				break;
+			case 2:
+				if(++b == 255){
+					phase++;
+				}
+				break;
+			case 3:
+				if(--g == 0){
+					phase++;
+				}
+				break;
+			case 4:
+				if(++r == 255){
+					phase++;
+				}
+				break;
+			case 5:
+				if(--b == 0){
+					phase = 0;
+				}
+				break;
+		}
+		
+		/*
+		switch (dg)        
+		{
+			case UP:
+				if (++g == 255)
+					dg = DOWN;
+				break;
+				
+			case DOWN:
+				if (--g == 0)
+					dg = UP;
+				break;
+		}
+		switch (db)         
+		{
+			case UP:
+				if (++b == 255)
+					db = DOWN;
+				break;
+				
+			case DOWN:
+				if (--b == 0)
+					db = UP;
+				break;
+		}
+		*/
+		OCR1A = g;                
 		OCR1B = b;
-		cnt = 0;
-	}
-}
-
-ISR (TIM0_OVF_vect)           /* Note [2] */
-{
-    //static uint8_t pwm=160;        /* Note [3] */
-    //static uint8_t direction;
-	static uint8_t cnt=0;
-	if(++cnt==THRESHOLD){
-    switch (dr)          /* Note [4] */
-    {
-        case UP:
-            if (++r == 255)
-                dr = DOWN;
-            break;
-
-        case DOWN:
-            if (--r == 0)
-                dr = UP;
-            break;
-    }
-    
-	
 		OCR0A = r;
 		cnt = 0;
 	}
 }
+/*
+ISR (TIM0_OVF_vect)           
+{
+	if(++cnt==THRESHOLD){
+	
+		OCR0A = r;
+		cnt = 0;
+	}
+}*/
 
 int main(void){
 	init();
