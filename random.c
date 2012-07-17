@@ -67,47 +67,12 @@ ISR (TIM1_OVF_vect)
 				break;
 		}
 		
-		/*
-		switch (dg)        
-		{
-			case UP:
-				if (++g == 255)
-					dg = DOWN;
-				break;
-				
-			case DOWN:
-				if (--g == 0)
-					dg = UP;
-				break;
-		}
-		switch (db)         
-		{
-			case UP:
-				if (++b == 255)
-					db = DOWN;
-				break;
-				
-			case DOWN:
-				if (--b == 0)
-					db = UP;
-				break;
-		}
-		*/
 		OCR1A = g;                
 		OCR1B = b;
 		OCR0A = r;
 		cnt = 0;
 	}
 }
-/*
-ISR (TIM0_OVF_vect)           
-{
-	if(++cnt==THRESHOLD){
-	
-		OCR0A = r;
-		cnt = 0;
-	}
-}*/
 
 int main(void){
 	init();
