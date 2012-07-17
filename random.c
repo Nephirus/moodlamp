@@ -28,12 +28,12 @@ volatile uint8_t dr, dg, db;
 volatile uint8_t phase = 0;
 volatile uint8_t cnt=0;
 
-#define THRESHOLD 15
+volatile uint8_t threshold = 100;
 
 ISR (TIM1_OVF_vect)        
 {
 	
-	if(++cnt==THRESHOLD){
+	if(++cnt>=threshold){
 		switch (phase){
 			case 0:
 				if(++g == 255){
@@ -86,7 +86,7 @@ int main(void){
 void init(void){
 	/* green - OCR1A - PB1 */
 	TCCR1 = _BV(PWM1A) | _BV(COM1A1);
-    TCCR1 |= _BV(CS12);
+    TCCR1 |= _BV(CS10);
     OCR1A = 0;
     DDRB |= _BV (PB1);
 	
@@ -97,7 +97,7 @@ void init(void){
 	
 	/* red - OCR0A - PB0 */
 	TCCR0A = _BV(COM0A1) | _BV(WGM00) | _BV(WGM01);
-	TCCR0B = _BV(CS01);
+	TCCR0B = _BV(CS00);
 	OCR0A = 0;
 	DDRB |= _BV(PB0);
 
