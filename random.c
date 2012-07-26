@@ -35,7 +35,7 @@ volatile uint8_t input2 = 1;
 volatile uint8_t input1_cnt=0;
 volatile uint8_t input2_cnt=0;
 
-const uint8_t thr[6] = {1,2,5,10,50,200};
+const uint8_t thr[7] = {1, 2, 5, 10, 50, 200, 255};
 
 
 ISR (TIM1_OVF_vect){
@@ -53,7 +53,7 @@ ISR (TIM1_OVF_vect){
 				}
 				break;
 			case 2:
-				if(++b == 255){
+				if(++b == 240){
 					phase++;
 				}
 				break;
@@ -96,7 +96,7 @@ int main(void){
 			_delay_ms(500);
 		}
 		if(((PINB & _BV(PB3))) == 0){
-			if(i<5){
+			if(i<6){
 				threshold = thr[++i];
 			}
 			_delay_ms(500);
