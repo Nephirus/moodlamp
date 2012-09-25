@@ -6958,7 +6958,7 @@ con-hirose.lbr from Bob Starr &amp;lt;rtzaudio@mindspring.com&amp;gt;&lt;br&gt;<
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="55.88" y="58.42"/>
-<instance part="J1" gate="G$1" x="-2.54" y="91.44" rot="R180"/>
+<instance part="J1" gate="G$1" x="-2.54" y="81.28" rot="MR0"/>
 <instance part="C1" gate="G$1" x="-20.32" y="86.36"/>
 <instance part="C2" gate="G$1" x="20.32" y="50.8"/>
 <instance part="P+1" gate="VCC" x="-20.32" y="104.14"/>
@@ -7033,10 +7033,15 @@ con-hirose.lbr from Bob Starr &amp;lt;rtzaudio@mindspring.com&amp;gt;&lt;br&gt;<
 <pinref part="C1" gate="G$1" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-20.32" y1="81.28" x2="-20.32" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="PWR"/>
+<pinref part="J1" gate="G$1" pin="GND"/>
 <wire x1="-20.32" y1="78.74" x2="-20.32" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="83.82" x2="-5.08" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="78.74" x2="-20.32" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="83.82" x2="-15.24" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="83.82" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="78.74" x2="-20.32" y2="78.74" width="0.1524" layer="91"/>
+<junction x="-20.32" y="78.74"/>
+<pinref part="J1" gate="G$1" pin="GNDBREAK"/>
+<wire x1="-5.08" y1="86.36" x2="-5.08" y2="83.82" width="0.1524" layer="91"/>
+<junction x="-5.08" y="83.82"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="GND"/>
@@ -7129,11 +7134,9 @@ con-hirose.lbr from Bob Starr &amp;lt;rtzaudio@mindspring.com&amp;gt;&lt;br&gt;<
 <pinref part="P+1" gate="VCC" pin="VCC"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="-20.32" y1="101.6" x2="-20.32" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="GND"/>
+<pinref part="J1" gate="G$1" pin="PWR"/>
 <wire x1="-5.08" y1="88.9" x2="-20.32" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="GNDBREAK"/>
-<wire x1="-5.08" y1="86.36" x2="-5.08" y2="88.9" width="0.1524" layer="91"/>
-<junction x="-5.08" y="88.9"/>
+<junction x="-20.32" y="88.9"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="AVCC"/>
