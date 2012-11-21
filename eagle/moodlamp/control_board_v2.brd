@@ -109,7 +109,6 @@
 <hole x="6.985" y="17.4625" drill="3.2"/>
 <hole x="38.735" y="28.2575" drill="3.2"/>
 <text x="42.2275" y="36.5125" size="1.778" layer="25" font="vector" rot="R270">LED+</text>
-<text x="0.635" y="28.575" size="0.8128" layer="25" font="vector">order #XXXXXa</text>
 <text x="44.1325" y="34.6075" size="2.1844" layer="52" font="vector" rot="MR0">moodlamp v2</text>
 <text x="44.1325" y="31.75" size="1.016" layer="52" font="vector" rot="MR0">by Nephirus</text>
 <text x="44.1325" y="1.5875" size="1.016" layer="52" font="vector" rot="MR0">rev 01</text>
