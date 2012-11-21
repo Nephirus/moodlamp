@@ -7276,26 +7276,26 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="R1" library="resistor" deviceset="R-EU_" device="R0805"/>
-<part name="PAD1" library="wirepad" deviceset="2,54/1,0" device=""/>
-<part name="Q1" library="transistor-power" deviceset="N-HEXFET-2D_?-*" device="SOT232" technology="IRLL014N"/>
+<part name="RED" library="wirepad" deviceset="2,54/1,0" device=""/>
+<part name="T1" library="transistor-power" deviceset="N-HEXFET-2D_?-*" device="SOT232" technology="IRLL014N"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R2" library="resistor" deviceset="R-EU_" device="R0805"/>
-<part name="PAD2" library="wirepad" deviceset="2,54/1,0" device=""/>
-<part name="Q2" library="transistor-power" deviceset="N-HEXFET-2D_?-*" device="SOT232" technology="IRLL014N"/>
+<part name="GRN" library="wirepad" deviceset="2,54/1,0" device=""/>
+<part name="T2" library="transistor-power" deviceset="N-HEXFET-2D_?-*" device="SOT232" technology="IRLL014N"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="R3" library="resistor" deviceset="R-EU_" device="R0805"/>
-<part name="PAD3" library="wirepad" deviceset="2,54/1,0" device=""/>
-<part name="Q3" library="transistor-power" deviceset="N-HEXFET-2D_?-*" device="SOT232" technology="IRLL014N"/>
+<part name="BLU" library="wirepad" deviceset="2,54/1,0" device=""/>
+<part name="T3" library="transistor-power" deviceset="N-HEXFET-2D_?-*" device="SOT232" technology="IRLL014N"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="R0805"/>
 <part name="S1" library="switch" deviceset="SKHMP*E010" device="" technology="S"/>
 <part name="S2" library="switch" deviceset="SKHMP*E010" device="" technology="S"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="USB1" library="usb_con-update" deviceset="MOLEX-47346-0001" device=""/>
+<part name="USB" library="usb_con-update" deviceset="MOLEX-47346-0001" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="JP1" library="pinhead" deviceset="PINHD-2X3" device=""/>
+<part name="ISP" library="pinhead" deviceset="PINHD-2X3" device=""/>
 <part name="PAD4" library="wirepad" deviceset="1,6/0,9" device=""/>
 <part name="PAD5" library="wirepad" deviceset="1,6/0,9" device=""/>
 <part name="PAD6" library="wirepad" deviceset="1,6/0,9" device=""/>
@@ -7313,12 +7313,12 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="R5" library="resistor" deviceset="R-EU_" device="R0805"/>
 <part name="P+5" library="supply1" deviceset="VCC" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="PAD20" library="wirepad" deviceset="2,54/1,0" device=""/>
-<part name="PAD21" library="wirepad" deviceset="2,54/1,0" device=""/>
-<part name="PAD22" library="wirepad" deviceset="2,54/1,0" device=""/>
+<part name="PAD20" library="wirepad" deviceset="2,54/1,0" device="" value="LED+"/>
+<part name="PAD21" library="wirepad" deviceset="2,54/1,0" device="" value="LED+"/>
+<part name="PAD22" library="wirepad" deviceset="2,54/1,0" device="" value="LED+"/>
 <part name="P+6" library="supply1" deviceset="VCC" device=""/>
 <part name="PAD17" library="wirepad" deviceset="1,6/0,9" device=""/>
-<part name="PAD16" library="wirepad" deviceset="1,6/0,9" device=""/>
+<part name="P16" library="wirepad" deviceset="1,6/0,9" device=""/>
 <part name="R6" library="resistor" deviceset="R-EU_" device="R0805" value="1k5"/>
 <part name="R7" library="resistor" deviceset="R-EU_" device="R0805" value="68R"/>
 <part name="R8" library="resistor" deviceset="R-EU_" device="R0805" value="68R"/>
@@ -7343,26 +7343,26 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <instance part="GND3" gate="1" x="15.24" y="68.58"/>
 <instance part="P+4" gate="VCC" x="22.86" y="101.6"/>
 <instance part="R1" gate="G$1" x="27.94" y="88.9" rot="R90"/>
-<instance part="PAD1" gate="P" x="170.18" y="40.64" rot="R180"/>
-<instance part="Q1" gate="G$1" x="160.02" y="33.02"/>
+<instance part="RED" gate="P" x="170.18" y="40.64" rot="R180"/>
+<instance part="T1" gate="G$1" x="160.02" y="33.02"/>
 <instance part="GND4" gate="1" x="162.56" y="20.32"/>
 <instance part="R2" gate="G$1" x="157.48" y="25.4" rot="R180"/>
-<instance part="PAD2" gate="P" x="187.96" y="60.96" rot="R180"/>
-<instance part="Q2" gate="G$1" x="177.8" y="53.34"/>
+<instance part="GRN" gate="P" x="187.96" y="60.96" rot="R180"/>
+<instance part="T2" gate="G$1" x="177.8" y="53.34"/>
 <instance part="GND5" gate="1" x="180.34" y="40.64"/>
 <instance part="R3" gate="G$1" x="175.26" y="45.72" rot="R180"/>
-<instance part="PAD3" gate="P" x="213.36" y="81.28" rot="R180"/>
-<instance part="Q3" gate="G$1" x="203.2" y="73.66"/>
+<instance part="BLU" gate="P" x="213.36" y="81.28" rot="R180"/>
+<instance part="T3" gate="G$1" x="203.2" y="73.66"/>
 <instance part="GND6" gate="1" x="205.74" y="60.96"/>
 <instance part="R4" gate="G$1" x="200.66" y="66.04" rot="R180"/>
 <instance part="S1" gate="G$1" x="147.32" y="104.14" rot="R180"/>
 <instance part="S2" gate="G$1" x="147.32" y="91.44" rot="R180"/>
 <instance part="GND7" gate="1" x="162.56" y="99.06"/>
 <instance part="GND8" gate="1" x="162.56" y="86.36"/>
-<instance part="USB1" gate="G$1" x="220.98" y="5.08"/>
+<instance part="USB" gate="G$1" x="220.98" y="5.08"/>
 <instance part="P+3" gate="1" x="213.36" y="27.94"/>
 <instance part="GND9" gate="1" x="213.36" y="-12.7"/>
-<instance part="JP1" gate="A" x="96.52" y="5.08"/>
+<instance part="ISP" gate="A" x="96.52" y="5.08"/>
 <instance part="PAD4" gate="1" x="22.86" y="66.04"/>
 <instance part="PAD5" gate="1" x="22.86" y="60.96"/>
 <instance part="PAD6" gate="1" x="25.4" y="76.2"/>
@@ -7385,7 +7385,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <instance part="PAD22" gate="P" x="210.82" y="127" rot="R180"/>
 <instance part="P+6" gate="VCC" x="200.66" y="144.78"/>
 <instance part="PAD17" gate="1" x="104.14" y="43.18" rot="R180"/>
-<instance part="PAD16" gate="1" x="99.06" y="50.8" rot="R180"/>
+<instance part="P16" gate="1" x="99.06" y="50.8" rot="R180"/>
 <instance part="R6" gate="G$1" x="203.2" y="15.24" rot="R270"/>
 <instance part="R7" gate="G$1" x="185.42" y="7.62"/>
 <instance part="R8" gate="G$1" x="175.26" y="5.08"/>
@@ -7430,7 +7430,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="15.24" y1="78.74" x2="15.24" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="Q1" gate="G$1" pin="S"/>
+<pinref part="T1" gate="G$1" pin="S"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="162.56" y1="27.94" x2="162.56" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -7438,7 +7438,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="162.56" y="25.4"/>
 </segment>
 <segment>
-<pinref part="Q2" gate="G$1" pin="S"/>
+<pinref part="T2" gate="G$1" pin="S"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="180.34" y1="48.26" x2="180.34" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -7446,7 +7446,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="180.34" y="45.72"/>
 </segment>
 <segment>
-<pinref part="Q3" gate="G$1" pin="S"/>
+<pinref part="T3" gate="G$1" pin="S"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="205.74" y1="68.58" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -7454,21 +7454,21 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="205.74" y="66.04"/>
 </segment>
 <segment>
-<pinref part="USB1" gate="G$1" pin="5"/>
+<pinref part="USB" gate="G$1" pin="5"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="215.9" y1="0" x2="213.36" y2="0" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="0" x2="213.36" y2="-9.144" width="0.1524" layer="91"/>
-<pinref part="USB1" gate="G$1" pin="GND1"/>
+<pinref part="USB" gate="G$1" pin="GND1"/>
 <wire x1="219.71" y1="-7.62" x2="219.71" y2="-9.144" width="0.1524" layer="91"/>
 <wire x1="219.71" y1="-9.144" x2="213.36" y2="-9.144" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="-9.144" x2="213.36" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="USB1" gate="G$1" pin="GND2"/>
+<pinref part="USB" gate="G$1" pin="GND2"/>
 <wire x1="222.25" y1="-7.62" x2="222.25" y2="-9.144" width="0.1524" layer="91"/>
-<pinref part="USB1" gate="G$1" pin="GND3"/>
+<pinref part="USB" gate="G$1" pin="GND3"/>
 <wire x1="222.25" y1="-9.144" x2="219.71" y2="-9.144" width="0.1524" layer="91"/>
 <wire x1="224.79" y1="-7.62" x2="224.79" y2="-9.144" width="0.1524" layer="91"/>
 <wire x1="224.79" y1="-9.144" x2="222.25" y2="-9.144" width="0.1524" layer="91"/>
-<pinref part="USB1" gate="G$1" pin="GND4"/>
+<pinref part="USB" gate="G$1" pin="GND4"/>
 <wire x1="227.33" y1="-7.62" x2="227.33" y2="-9.144" width="0.1524" layer="91"/>
 <wire x1="227.33" y1="-9.144" x2="224.79" y2="-9.144" width="0.1524" layer="91"/>
 <junction x="213.36" y="-9.144"/>
@@ -7485,7 +7485,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="200.66" y="-10.16"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="6"/>
+<pinref part="ISP" gate="A" pin="6"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="101.6" y1="2.54" x2="109.22" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="2.54" x2="109.22" y2="0" width="0.1524" layer="91"/>
@@ -7537,7 +7537,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="22.86" y="93.98"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
+<pinref part="ISP" gate="A" pin="2"/>
 <pinref part="P+5" gate="VCC" pin="VCC"/>
 <wire x1="101.6" y1="7.62" x2="109.22" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="7.62" x2="109.22" y2="10.16" width="0.1524" layer="91"/>
@@ -7568,7 +7568,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="30.48" y="83.82"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="5"/>
+<pinref part="ISP" gate="A" pin="5"/>
 <wire x1="93.98" y1="2.54" x2="71.12" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -7577,7 +7577,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="IC1" gate="G$1" pin="PB3(MOSI/OC2)"/>
 <wire x1="93.98" y1="30.48" x2="91.44" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="ISP" gate="A" pin="4"/>
 <wire x1="91.44" y1="30.48" x2="81.28" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="5.08" x2="114.3" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="5.08" x2="114.3" y2="15.24" width="0.1524" layer="91"/>
@@ -7588,15 +7588,15 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="Q1" gate="G$1" pin="D"/>
-<pinref part="PAD1" gate="P" pin="P"/>
+<pinref part="T1" gate="G$1" pin="D"/>
+<pinref part="RED" gate="P" pin="P"/>
 <wire x1="162.56" y1="38.1" x2="162.56" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="40.64" x2="167.64" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="Q2" gate="G$1" pin="G"/>
+<pinref part="T2" gate="G$1" pin="G"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="175.26" y1="50.8" x2="170.18" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="50.8" x2="170.18" y2="45.72" width="0.1524" layer="91"/>
@@ -7609,15 +7609,15 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="Q2" gate="G$1" pin="D"/>
-<pinref part="PAD2" gate="P" pin="P"/>
+<pinref part="T2" gate="G$1" pin="D"/>
+<pinref part="GRN" gate="P" pin="P"/>
 <wire x1="180.34" y1="58.42" x2="180.34" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="60.96" x2="185.42" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="Q3" gate="G$1" pin="G"/>
+<pinref part="T3" gate="G$1" pin="G"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="200.66" y1="71.12" x2="195.58" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="71.12" x2="195.58" y2="66.04" width="0.1524" layer="91"/>
@@ -7630,8 +7630,8 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="Q3" gate="G$1" pin="D"/>
-<pinref part="PAD3" gate="P" pin="P"/>
+<pinref part="T3" gate="G$1" pin="D"/>
+<pinref part="BLU" gate="P" pin="P"/>
 <wire x1="205.74" y1="78.74" x2="205.74" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="81.28" x2="210.82" y2="81.28" width="0.1524" layer="91"/>
 </segment>
@@ -7665,7 +7665,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="+5V" class="0">
 <segment>
-<pinref part="USB1" gate="G$1" pin="1"/>
+<pinref part="USB" gate="G$1" pin="1"/>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <wire x1="215.9" y1="10.16" x2="213.36" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="10.16" x2="213.36" y2="22.86" width="0.1524" layer="91"/>
@@ -7679,7 +7679,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <net name="N$12" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
-<pinref part="Q1" gate="G$1" pin="G"/>
+<pinref part="T1" gate="G$1" pin="G"/>
 <wire x1="157.48" y1="30.48" x2="152.4" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="30.48" x2="152.4" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
@@ -7692,13 +7692,13 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="IC1" gate="G$1" pin="PB5(SCK)"/>
 <wire x1="81.28" y1="25.4" x2="86.36" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="25.4" x2="86.36" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="ISP" gate="A" pin="3"/>
 <wire x1="86.36" y1="5.08" x2="93.98" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="ISP" gate="A" pin="1"/>
 <wire x1="93.98" y1="7.62" x2="88.9" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="7.62" x2="88.9" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PB4(MISO)"/>
@@ -7821,14 +7821,14 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="N$24" class="0">
 <segment>
-<pinref part="PAD16" gate="1" pin="P"/>
+<pinref part="P16" gate="1" pin="P"/>
 <pinref part="IC1" gate="G$1" pin="PD4(XCK/T0)"/>
 <wire x1="96.52" y1="50.8" x2="81.28" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$30" class="0">
 <segment>
-<pinref part="USB1" gate="G$1" pin="2"/>
+<pinref part="USB" gate="G$1" pin="2"/>
 <wire x1="215.9" y1="7.62" x2="203.2" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="203.2" y1="10.16" x2="203.2" y2="7.62" width="0.1524" layer="91"/>
@@ -7843,7 +7843,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="N$31" class="0">
 <segment>
-<pinref part="USB1" gate="G$1" pin="3"/>
+<pinref part="USB" gate="G$1" pin="3"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="215.9" y1="5.08" x2="190.5" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="C"/>
