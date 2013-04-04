@@ -1,7 +1,7 @@
-PRG            = random
-OBJ            = random.o
-MCU_TARGET     = attiny45
-AVRDUDE_TARGET = t45
+PRG            = main
+OBJ            = main.o
+MCU_TARGET     = atmega8
+AVRDUDE_TARGET = m8
 OPTIMIZE       = -Os
 PROG	       = dragon_isp
 PORT	       = usb
