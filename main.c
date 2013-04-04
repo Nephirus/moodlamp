@@ -17,17 +17,30 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
-#include <avr/sleep.h>
 
 
 void init();
 void clear_all();
 void test_colors();
+void rainbow_update();
+
+volatile uint8_t r = 255;
+volatile uint8_t g = 0;
+volatile uint8_t b = 0;
+volatile uint8_t state = 1;
+volatile uint8_t rainbow_step = 20;    // rainbow step size in ms
+
+
 
 void init(){
     // Set direction of LED pins to output
     DDRB |= (1<<DDB3) | (1<<DDB2) | (1<<DDB1);
 
+
+    // Configure Timer0 
+    TIMSK |= (1<<TOIE0);
+    TCCR0 |= (1<<CS02) | (1<<CS00);     // clk/1024
+    
     // Configure Timer2 (red PWM)
     TCCR2 |= (1<<WGM21) | (1<<WGM20);   // Fast PWM mode
     TCCR2 |= (1<<COM21);   // Clear OC2 on Compare Match, set at bottom
@@ -41,7 +54,6 @@ void init(){
 
 void clear_all(){
     PORTB &= ~((1<<PB3) | (1<<PB2) | (1<<PB1));
-    //PORTB = 0;
 }
 
 void test_colors(){
@@ -59,49 +71,58 @@ void test_colors(){
     clear_all();
 }
 
+void rainbow_update(){
+    OCR1A = g;
+    OCR1B = b;
+    OCR2 = r;
+    switch (state){
+        case 1:
+            g++;
+            if(g == 255)
+                state++;
+            break;
+        case 2:
+            r--;
+            if(r == 0)
+                state++;
+            break;
+        case 3:
+            b++;
+            if(b == 255)
+                state++;
+            break;
+        case 4:
+            g--;
+            if(g == 0)
+                state++;
+            break;
+        case 5:
+            r++;
+            if(r == 255)
+                state++;
+            break;
+        case 6:
+            b--;
+            if(b == 0)
+                state = 1;
+            break;
+    }
+}
+
+
+
+ISR(TIMER0_OVF_vect, ISR_NOBLOCK){
+    rainbow_update();
+    TCNT0 = 255 - rainbow_step;
+}
+
 int main(){
-    uint8_t r = 255;
-    uint8_t g = 0;
-    uint8_t b = 0;
-    uint8_t state = 1;
     init();
+    sei();
     while (1){
-        OCR1A = g;
-        OCR1B = b;
-        OCR2 = r;
-        _delay_ms(30);
-        switch (state){
-            case 1:
-                g++;
-                if(g == 255)
-                    state++;
-                break;
-            case 2:
-                r--;
-                if(r == 0)
-                    state++;
-                break;
-            case 3:
-                b++;
-                if(b == 255)
-                    state++;
-                break;
-            case 4:
-                g--;
-                if(g == 0)
-                    state++;
-                break;
-            case 5:
-                r++;
-                if(r == 255)
-                    state++;
-                break;
-            case 6:
-                b--;
-                if(b == 0)
-                    state = 1;
-                break;
-        }
+        ;
     }
     return 0;
 }
+
+
