@@ -27,6 +27,11 @@ void test_colors();
 void init(){
     // Set direction of LED pins to output
     DDRB |= (1<<DDB3) | (1<<DDB2) | (1<<DDB1);
+
+    // Configure Timer2 (red PWM)
+    TCCR2 |= (1<<WGM21) | (1<<WGM20);   // Fast PWM mode
+    TCCR2 |= (1<<COM21);   // Clear OC2 on Compare Match, set at bottom
+    TCCR2 |= (1<<CS20);     // no prescaling
 }
 
 void clear_all(){
@@ -49,9 +54,12 @@ void test_colors(){
     clear_all();
 }
 
-void main(){
+int main(){
+    uint8_t i = 0;
     init();
     while (1){
-        test_colors();
+        OCR2 = i++;
+        _delay_ms(10);
     }
+    return 0;
 }
