@@ -32,6 +32,11 @@ void init(){
     TCCR2 |= (1<<WGM21) | (1<<WGM20);   // Fast PWM mode
     TCCR2 |= (1<<COM21);   // Clear OC2 on Compare Match, set at bottom
     TCCR2 |= (1<<CS20);     // no prescaling
+
+    // Configure Timer1 (green and blue PWM)
+    TCCR1A |= (1<<WGM12) | (1<<WGM10);  // Fast PWM, 8-bit
+    TCCR1A |= (1<<COM1A1) | (1<<COM1B1);    // Clear OC1{A,B} on Compare Match, set at bottom
+    TCCR1B |= (1<<CS10);    // no prescaling
 }
 
 void clear_all(){
@@ -58,7 +63,9 @@ int main(){
     uint8_t i = 0;
     init();
     while (1){
-        OCR2 = i++;
+        //OCR1A = i++;
+        OCR1B = i++;
+        //OCR2 = i++;
         _delay_ms(10);
     }
     return 0;
