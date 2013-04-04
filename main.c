@@ -60,13 +60,48 @@ void test_colors(){
 }
 
 int main(){
-    uint8_t i = 0;
+    uint8_t r = 255;
+    uint8_t g = 0;
+    uint8_t b = 0;
+    uint8_t state = 1;
     init();
     while (1){
-        //OCR1A = i++;
-        OCR1B = i++;
-        //OCR2 = i++;
-        _delay_ms(10);
+        OCR1A = g;
+        OCR1B = b;
+        OCR2 = r;
+        _delay_ms(30);
+        switch (state){
+            case 1:
+                g++;
+                if(g == 255)
+                    state++;
+                break;
+            case 2:
+                r--;
+                if(r == 0)
+                    state++;
+                break;
+            case 3:
+                b++;
+                if(b == 255)
+                    state++;
+                break;
+            case 4:
+                g--;
+                if(g == 0)
+                    state++;
+                break;
+            case 5:
+                r++;
+                if(r == 255)
+                    state++;
+                break;
+            case 6:
+                b--;
+                if(b == 0)
+                    state = 1;
+                break;
+        }
     }
     return 0;
 }
