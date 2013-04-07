@@ -36,6 +36,13 @@ void init(){
     // Set direction of LED pins to output
     DDRB |= (1<<DDB3) | (1<<DDB2) | (1<<DDB1);
 
+    // Setup buttons
+    DDRD |= (1<<PD6);   // S2 -> input
+    PORTD |= (1<<PD6);  // enable internal pullup
+
+    DDRD |= (1<<PD3);   // S1 -> input
+    PORTD |= (1<<PD3);  // enable internal pullup
+
 
     // Configure Timer0 
     TIMSK |= (1<<TOIE0);
@@ -109,18 +116,43 @@ void rainbow_update(){
     }
 }
 
-
+volatile uint8_t s1state = 0;
+volatile uint8_t s1trig = 0;
+volatile uint8_t s2state = 0;
+volatile uint8_t s2trig = 0;
 
 ISR(TIMER0_OVF_vect, ISR_NOBLOCK){
     rainbow_update();
     TCNT0 = 255 - rainbow_step;
+
+    // input check - FIXME: checking interval should not depend on rainbow speed
+    if(!(PIND & _BV(PD6))){
+        s2state = 1;
+    } else {
+        s2state = 0;
+        s2trig = 0;
+    }
+
+    if(!(PIND & _BV(PD3))){
+        s1state = 1;
+    } else {
+        s1state = 0;
+        s1trig = 0;
+    }
 }
 
 int main(){
     init();
     sei();
     while (1){
-        ;
+        if(s2state && !s2trig){
+            rainbow_step += 5;
+            s2trig = 1;
+        }
+        if(s1state && !s1trig){
+            rainbow_step -= 5;
+            s1trig = 1;
+        }
     }
     return 0;
 }
